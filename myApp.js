@@ -21,7 +21,8 @@ app.get('/json', (req, res) => {
 
 app.use((req, res, next)=>{
     console.log('logging');
-    console.log(`${req.method} ${req.path} ${req.ip}`);
+    // console.log(`${req.method} ${req.path} ${req.ip}`);
+
     next();
 });
 
