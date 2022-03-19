@@ -4,6 +4,15 @@ console.log("Hello World");
 var absPath = __dirname + '/views/index.html';
 var pathCss = __dirname + '/public';
 
+app.get('/now', (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+}, (req, res) => {
+    res.json({
+        "time":req.time
+    });
+});
+
 app.use((req, res, next)=>{
     console.log('logging');
     console.log(`${req.method} ${req.path} - ${req.ip}`);
