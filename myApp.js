@@ -7,7 +7,7 @@ app.get('/', (req,res)=> {
     res.sendFile(absPath);
 });
 
-app.use(express.static(pathCss));
+app.use(pathCss, express.static(pathCss));
 
 
 
