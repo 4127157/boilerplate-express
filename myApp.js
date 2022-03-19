@@ -4,6 +4,12 @@ console.log("Hello World");
 var absPath = __dirname + '/views/index.html';
 var pathCss = __dirname + '/public';
 
+app.get('/:word/echo', (req, res) => {
+    res.json({
+        "echo": req.params.word
+    });
+});
+
 app.get('/now', (req, res, next) => {
     req.time = new Date().toString();
     next();
