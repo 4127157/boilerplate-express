@@ -14,6 +14,12 @@ app.get('/name', (req, res) => {
     });
 });
 
+app.post('/name', (req, res) => {
+    res.json({
+        "name": `${req.body.first} ${req.body.last}`
+    });
+});
+
 app.get('/:word/echo', (req, res) => {
     res.json({
         "echo": req.params.word
