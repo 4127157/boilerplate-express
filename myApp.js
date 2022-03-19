@@ -7,6 +7,11 @@ app.use('/public', express.static(pathCss));
 app.get('/', (req,res)=> {
     res.sendFile(absPath);
 });
+app.get('/json', (req, res) => {
+    res.json({
+        "message": "Hello json"
+    });
+});
 
 
 
