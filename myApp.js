@@ -8,8 +8,12 @@ app.get('/', (req,res)=> {
     res.sendFile(absPath);
 });
 app.get('/json', (req, res) => {
+    let dummyStr = "Hello json";
+    if(process.env.MESSAGE_STYLE === "uppercase"){
+        dummyStr = dummyStr.toUpperCase();
+    } 
     res.json({
-        "message": "Hello json"
+        "message": dummyStr
     });
 });
 
