@@ -3,6 +3,13 @@ var app = express();
 console.log("Hello World");
 var absPath = __dirname + '/views/index.html';
 var pathCss = __dirname + '/public';
+
+app.use((req, res, next)=>{
+    console.log('logging');
+    console.log(`${req.method} ${req.path} ${req.ip}`);
+    next();
+});
+
 app.use('/public', express.static(pathCss));
 
 app.get('/', (req,res)=> {
@@ -19,12 +26,6 @@ app.get('/json', (req, res) => {
     });
 });
 
-app.use((req, res, next)=>{
-    console.log('logging');
-    // console.log(`${req.method} ${req.path} ${req.ip}`);
-
-    next();
-});
 
 
 
