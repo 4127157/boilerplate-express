@@ -5,7 +5,7 @@ console.log("Hello World");
 var absPath = __dirname + '/views/index.html';
 var pathCss = __dirname + '/public';
 
-app.use(bodyParser.urlEncoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/name', (req, res) => {
     var {first: fName, last: lName} = req.query;
